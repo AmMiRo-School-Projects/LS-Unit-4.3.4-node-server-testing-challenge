@@ -37,8 +37,8 @@ function updateFriend(changes, id) {
     });
 }
 
-function deleteFriend(id) {
-  const friend = getFriendById(id).first();
+async function deleteFriend(id) {
+  const friend = await getFriendById(id).first();
   db("friends")
     .where({ id })
     .del();
